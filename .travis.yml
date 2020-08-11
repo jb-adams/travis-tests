@@ -1,0 +1,14 @@
+language: java
+dist: bionic
+sudo: false
+jdk:
+  - openjdk11
+env:
+  - GH_URL=https://raw.githubusercontent.com FILE_TO_VALIDATE=service-registry.yaml URL_TO_VALIDATE=$GH_URL/${TRAVIS_PULL_REQUEST_SLUG:-$TRAVIS_REPO_SLUG}/${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}/$FILE_TO_VALIDATE
+before_install:
+  - git clone --branch=v1.1.0 https://github.com/mcupak/oas-validator.git
+script:
+  - ./oas-validator/validate.sh "$URL_TO_VALIDATE"
+after_success:
+  - chmod 755 ./scripts/build-and-push-docs.sh
+  - ./scripts/build-and-push-docs.sh
