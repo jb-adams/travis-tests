@@ -21,7 +21,7 @@ gh-openapi-docs
 
 echo "GH OPENAPI DOCS DONE RUNNING"
 git fetch origin
-git checkout --track -b gh-pages
+git checkout -b gh-pages
 
 git branch
 git status
