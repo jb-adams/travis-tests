@@ -23,7 +23,8 @@ echo "GH OPENAPI DOCS DONE RUNNING"
 git branch
 git remote -v
 git checkout master
-git fetch
+git remote update
+git fetch origin
 git checkout -b gh-pages
 git branch --set-upstream-to=origin/gh-pages
 
