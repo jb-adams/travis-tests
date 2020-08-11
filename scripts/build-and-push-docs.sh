@@ -23,10 +23,9 @@ gh-openapi-docs
 git checkout -b gh-pages
 git branch --set-upstream-to=origin/gh-pages
 git config pull.rebase false
-# git stash save --include-untracked
 git pull
-# git stash pop 0
 
-git branch
+git add preview docs openapi.json openapi.yaml
+git commit -m "gh-pages commit"
 git status
-ls
+git push
