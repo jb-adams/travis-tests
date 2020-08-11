@@ -25,7 +25,10 @@ git branch --set-upstream-to=origin/gh-pages
 git config pull.rebase false
 git pull
 
-git add preview docs openapi.json openapi.yaml
+git add preview
+git add docs
+git add openapi.json
+git add openapi.yaml
 git commit -m "gh-pages commit"
 git status
 git push
