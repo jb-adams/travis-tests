@@ -18,29 +18,3 @@ npm install -g @ga4gh/gh-openapi-docs
 
 # RUN GH-OPENAPI-DOCS
 gh-openapi-docs
-
-echo "GH OPENAPI DOCS DONE RUNNING"
-git add openapi.yaml
-git add openapi.json
-git add docs
-git commit -m "gh-pages commit"
-git push origin 
-
-# git checkout -b gh-pages
-# git branch --set-upstream-to=origin/gh-pages
-
-# echo "listing directory contents"
-# ls
-# echo "trying to config"
-# git config --global pull.rebase false
-# echo "trying to stash"
-# git stash save --include-untracked
-# echo "trying to pull"
-# git pull --rebase
-# git stash pop 0
-
-
-
-# git branch
-# git status
-# ls
