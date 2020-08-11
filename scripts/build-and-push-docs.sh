@@ -22,6 +22,7 @@ gh-openapi-docs
 echo "GH OPENAPI DOCS DONE RUNNING"
 git checkout -b gh-pages
 git branch --set-upstream-to=origin/gh-pages
+git config --global pull.rebase false
 git stash save --include-untracked
 git pull
 git stash pop 0
