@@ -22,9 +22,10 @@ gh-openapi-docs
 # PUSH TO GH-PAGES BRANCH
 git checkout -b gh-pages
 git branch --set-upstream-to=origin/gh-pages
-git stash save --include-untracked
+git config pull.rebase false
+# git stash save --include-untracked
 git pull
-git stash pop 0
+# git stash pop 0
 
 git branch
 git status
