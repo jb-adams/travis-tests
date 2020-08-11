@@ -20,13 +20,13 @@ npm install -g @ga4gh/gh-openapi-docs
 gh-openapi-docs
 
 echo "GH OPENAPI DOCS DONE RUNNING"
-git branch
-git remote -v
-git checkout master
-git remote update
-git fetch origin
 git checkout -b gh-pages
 git branch --set-upstream-to=origin/gh-pages
+git stash save --include-untracked
+git pull
+git stash pop 0
+
+
 
 git branch
 git status
