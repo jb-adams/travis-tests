@@ -22,6 +22,7 @@ gh-openapi-docs
 echo "GH OPENAPI DOCS DONE RUNNING"
 git fetch origin
 git checkout -b gh-pages
+git branch --set-upstream-to=origin/gh-pages
 
 git branch
 git status
