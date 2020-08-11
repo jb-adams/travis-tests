@@ -18,3 +18,8 @@ npm install -g @ga4gh/gh-openapi-docs
 
 # RUN GH-OPENAPI-DOCS
 gh-openapi-docs
+
+echo "GH OPENAPI DOCS DONE RUNNING"
+git branch
+git status
+ls
