@@ -29,7 +29,7 @@ git config --global pull.rebase false
 echo "trying to stash"
 git stash save --include-untracked
 echo "trying to pull"
-git pull
+git pull --rebase
 git stash pop 0
 
 
