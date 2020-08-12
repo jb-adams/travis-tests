@@ -7,19 +7,16 @@ jdk:
 - openjdk11
 env:
   global:
-  - GH_NAME='ga4gh-bot'
-  - GH_EMAIL='ga4ghdev@gmail.com'
-  - GH_ORG=jb-adams
-  - GH_REPO=travis-tests
-  - GH_BRANCH=gh-pages
   - GH_URL=https://raw.githubusercontent.com
   - FILE_TO_VALIDATE=service-registry.yaml
   - URL_TO_VALIDATE=$GH_URL/${TRAVIS_PULL_REQUEST_SLUG:-$TRAVIS_REPO_SLUG}/${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}/$FILE_TO_VALIDATE
-  - secure: ggQ9A5v926RLSywyOxGi4algeNn7tZXGjvdeOfB5LhDANvRC9bqr+duHWmMf6Ueyd+Ncb2Uws+5RD+KfaQggBKxVS04S52YumXVRdObXdvsh17qGCp3dh20g+hP/ZWoKWpNARl1bc6vTlcM2GnIQZT7mXbjrRV94QjlPyLL2Lyuq07CfExxWetwscuVgMEpgjOUKGSlTqTWuU62kPvC2XyBHCKHDEXPpStX6yUlhItJFCZCUzlHFxQ8rD/MHDLFIpqgzOIO41sbCjLI5qmxGrAIFGBuhlE5UNrpr9QRrKlNPPqeXvUhRE6AeJQCD4SeBBdXqTtVvSp+3U3BHowZ8Bwv+ASXFMnWAagFdyNBGsmTSOo3aw46nEXhfU8gtFMfSlyQmvI3hfeK6ioc9jx6OFO+xa0e9EK+XVRo6MaOTUjyJIaevLIwRzGiUG77OqpjFcImpgst5mqwzvS8RDYJIWDcehwORAUTeZ/kULAOs+Y3hz0FNgwv4Dk86DLX8uKlTYmG0jCcgddvVZQ/RcqDMEiWL6Gp1P+y7fJapf/qY9Zo9Ej9F2O5mhk+9xkpd2Xsvwr9MriG7vBmyUNbDCdkcev/u1ZR3nqlmpZ+VC/Shq07MvUof786S4FyDCgZ7WKu7nQL7AdtnoZH3YC/J2BD2T/Qrb/URG9CWsIiLwvmRX9I=
+  - GH_PAGES_NAME='ga4gh-bot'
+  - GH_PAGES_EMAIL='ga4ghdev@gmail.com'
+  - secure: GcogPOjoRDwVCq7AHNuMxdXlSakhqsz3umU+VLT8QBpy0/p3+of+I8UMK0XYvKuCEq39KXGVf1Ej8+fCyiJDKyfYdZCRDHiYcGcrltS+bA4WhUYzTLHkXa1j6Fsoki2QaCfRaP7OSE9q4/mj12WwVCkwWgsXB7uAfSriv0IzALiMOAr1MLeQbP8bI4E6CGQinZ74thxg2CGchgVqLrXyYxBdJPXnqWgWBhOJHWHlcfKyEjQsHCGCawzEfAWJmEIs88ZSwZe65jkxmDbfpS8eiHCtW1kzd76diBEQoz+0vc60XaYzo1l7RAVy7wBvazoAKsrTHXdGcKWz63d8Cl9NbpBU6NvmKGD9UgW65ZAkIWZCO+20avdbuCjcGEvERe4Xz8cOieyIJJuq7Qsae7mmUbnkG/BwWK2PXGdCGa3ZCk4bMr0gL++qVIllADJMbxHQ5KKztMSQausppzdjWrto9cxDKLfU6pzwNBR4IYjPr6LMXnKfyffQZzw1Ja7apj2yYxaqG2PzK3BlYPeTtbnZusaf8s2ocFqlA4LpCQILw3XZc9m1WUNJvBD3tQRqAmiAt6nJRcMg9EZ2Ow+mLX4nKRHhZR+yJvpWhbu9+xxOq/B0dpdWMwg7K55LOp4vBdhNa/HEXxF2DILTKdmuPobT9mcQYkXr54QLI66eUQbE/Ns=
 before_install:
 - git clone --branch=v1.1.0 https://github.com/mcupak/oas-validator.git
 script:
 - ./oas-validator/validate.sh "$URL_TO_VALIDATE"
 after_success:
-- chmod 755 ./scripts/build-and-push-docs.sh
-- "./scripts/build-and-push-docs.sh"
+- chmod 755 ./scripts/push-openapi-docs.sh
+- "./scripts/push-openapi-docs.sh"

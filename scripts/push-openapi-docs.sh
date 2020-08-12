@@ -1,4 +1,4 @@
-# build-and-push-docs.sh
+# push-openapi-docs.sh
 # on travis ci, run the gh-openapi-docs tool and push built documentation to gh-pages branch
 
 # install node version manager (nvm), which will install the correct nodejs version
@@ -26,10 +26,10 @@ function install_gh_openapi_docs {
 
 # configure the github account that will push to the gh-pages branch of this repo
 function setup_github_bot {
-    git config user.name $GH_NAME
-    git config user.email $GH_EMAIL
+    git config user.name $GH_PAGES_NAME
+    git config user.email $GH_PAGES_EMAIL
     git config credential.helper "store --file=.git/credentials"
-    echo "https://${GH_TOKEN}:x-oauth-basic@github.com" > .git/credentials
+    echo "https://${GH_PAGES_TOKEN}:x-oauth-basic@github.com" > .git/credentials
 }
 
 # remove credentials of github account from build
