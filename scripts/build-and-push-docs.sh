@@ -1,5 +1,3 @@
-
-
 function install_nvm {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
     export NVM_DIR="$HOME/.nvm"
@@ -49,15 +47,17 @@ function commit_gh_openapi_docs_outputs {
 }
 
 function main {
-    install_nvm
-    install_node
-    install_gh_openapi_docs
-    gh-openapi-docs
-    setup_github_bot
-    setup_github_branch
-    commit_gh_openapi_docs_outputs
-    git push
-    cleanup_github_bot
+    if [[ $TRAVIS_BRANCH == master || $TRAVIS_BRANCH == develop || $TRAVIS_BRANCH == release* ]]
+        install_nvm
+        install_node
+        install_gh_openapi_docs
+        gh-openapi-docs
+        setup_github_bot
+        setup_github_branch
+        commit_gh_openapi_docs_outputs
+        git push
+        cleanup_github_bot
+    fi
 }
 
 main
