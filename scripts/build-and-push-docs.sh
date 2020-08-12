@@ -35,7 +35,9 @@ function setup_github_branch {
     git checkout -b gh-pages
     git branch --set-upstream-to=origin/gh-pages
     git config pull.rebase false
+    git stash save --include-untracked
     git pull
+    git stash pop 0
 }
 
 function commit_gh_openapi_docs_outputs {
