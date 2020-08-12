@@ -42,17 +42,17 @@ function setup_github_branch {
     git checkout -b gh-pages
     git branch --set-upstream-to=origin/gh-pages
     git config pull.rebase false
-    git stash save --include-untracked
-    git pull
-    git stash pop 0
-}
-
-# commit the outputs from gh-openapi-docs
-function commit_gh_openapi_docs_outputs {
     git add preview
     git add docs
     git add openapi.json
     git add openapi.yaml
+    git stash save
+    git pull
+    git checkout stash -- .
+}
+
+# commit the outputs from gh-openapi-docs
+function commit_gh_openapi_docs_outputs {
     git commit -m "added docs from gh-openapi-docs"
 }
 
