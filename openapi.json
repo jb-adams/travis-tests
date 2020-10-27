@@ -118,7 +118,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/service-info_ServiceType"
+                    "$ref": "#/components/schemas/schemas-ServiceType"
                   }
                 }
               }
@@ -152,7 +152,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/service-info_Service"
+                  "$ref": "#/components/schemas/schemas-Service"
                 }
               }
             }
@@ -235,13 +235,13 @@
     },
     "schemas": {
       "Service": {
-        "$ref": "#/components/schemas/service-info_Service"
+        "$ref": "#/components/schemas/schemas-Service"
       },
       "ExternalService": {
         "description": "GA4GH service with a URL",
         "allOf": [
           {
-            "$ref": "#/components/schemas/service-info_Service"
+            "$ref": "#/components/schemas/schemas-Service"
           },
           {
             "type": "object",
@@ -260,7 +260,7 @@
         ]
       },
       "ServiceType": {
-        "$ref": "#/components/schemas/service-info_ServiceType"
+        "$ref": "#/components/schemas/schemas-ServiceType"
       },
       "Error": {
         "type": "object",
@@ -287,7 +287,7 @@
           "title"
         ]
       },
-      "service-info_ServiceType": {
+      "schemas-ServiceType": {
         "description": "Type of a GA4GH service",
         "type": "object",
         "required": [
@@ -313,7 +313,7 @@
           }
         }
       },
-      "service-info_Service": {
+      "schemas-Service": {
         "description": "GA4GH service",
         "type": "object",
         "required": [
@@ -335,7 +335,7 @@
             "example": "My project"
           },
           "type": {
-            "$ref": "#/components/schemas/service-info_ServiceType"
+            "$ref": "#/components/schemas/schemas-ServiceType"
           },
           "description": {
             "type": "string",
