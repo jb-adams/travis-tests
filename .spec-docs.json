@@ -1,6 +1,0 @@
-{
-  "apiSpecPath": "service-registry.yaml",
-  "docsRoot": "docs",
-  "defaultBranch": "master",
-  "branchPathBase": "preview"
-}
