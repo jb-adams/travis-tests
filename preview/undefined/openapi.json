@@ -1,0 +1,34 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Hello World API",
+    "version": "1.7.0",
+    "description": "Hello World API says hello\n\n# Subheader 1\n\n* change 0\n* change 1\n* change A\n\n# Subheader 2\n\n# Subheader 3\n",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://raw.githubusercontent.com/ga4gh-discovery/ga4gh-service-registry/develop/LICENSE"
+    },
+    "contact": {
+      "name": "GA4GH Discovery Networks Team",
+      "email": "ga4gh-discovery-networks@ga4gh.org"
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/hello": {
+      "get": {
+        "summary": "Say Hello",
+        "responses": {
+          "200": {
+            "description": "You said hello"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
