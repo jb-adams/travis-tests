@@ -1,11 +1,14 @@
 openapi: 3.0.2
 info:
   title: Hello World API
-  version: 1.6.3
+  version: 1.7.0
   description: |
     Hello World API says hello
 
     # Subheader 1
+
+    * change 0
+    * change 1
 
     # Subheader 2
 
