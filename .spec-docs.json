@@ -1,5 +1,5 @@
 {
-  "apiSpecPath": "service-registry.yaml",
+  "apiSpecPath": "helloworld.yaml",
   "docsRoot": "docs",
   "defaultBranch": "master",
   "branchPathBase": "preview"
