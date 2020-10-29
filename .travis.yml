@@ -10,7 +10,7 @@ services:
 env:
   global:
     - GH_URL=https://raw.githubusercontent.com
-    - FILE_TO_VALIDATE=service-registry.yaml
+    - FILE_TO_VALIDATE=helloworld.yaml
     - URL_TO_VALIDATE=$GH_URL/${TRAVIS_PULL_REQUEST_SLUG:-$TRAVIS_REPO_SLUG}/${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}/$FILE_TO_VALIDATE
     - secure: "OHWO9E6QGH7sNH7sr0SQ3AZNjLkxack2uztf5EV4EMkCobEnIYFhggMGwklF8fvurMephtRte4NN4aBKI3rD70TqotHscpO+O1XS6zvUDvFfkJsTWivdE1T07pW8aSiPWM6r3mace/tlc3l05EZmV3qXECNxmW9YXleSsEtxvNlR6BGAKwO/OBTFDfNFlgC1giPdJzjUG08hWtltJJrb8Nr0UmnabuWHCC3d8nhpcXCmtpvQfp15rfBIXtdxPJau+Gga5xZ+0T7EzDFo100xTLx7NHStgk0k3/oZiRHvXd1WIIEq1l3cM/f8i47ci1RaiVEH0Hl04CQB21fXfUsVBol+3UmXhuUxgwPgt9XjAJk5WIGR4czJZvnJ4aoHz4xDkZZ1nW45qdHCpBltmqpRZOgBrjmW0JA5JX9SiQVpIHcQ+Pc+mCk1EClXH1y6zpG1mb5Ypd26346Yd3SkQvHUpCNi9qOptrwZILMN62rvmc2zrLsMmKIpMiciW/7QrCYrgvQa51GhpoAKs4m2xUKaphPwRzMgaKo+ZJh3jhWJTUFtSjepoL/1ArUDmr6f9AXe1hEeOa7jGTXj9c5TjtuMtXNYOQHvLp6oAAoPrrptStHyoe7kFiVG33BueXuic0X4wroj5IfdBv6gRfwVMaV5yvW2jGrcsxRxu2lKxmNcySU="
 before_install:
