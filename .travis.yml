@@ -20,5 +20,6 @@ script:
 after_success:
   - pwd
   - ls
+  - ls -la
   - git branch
   - docker image pull ga4gh/gh-openapi-docs:0.2.1 && docker run -v `pwd`:/usr/src/repo --env PR_BUILD=${TRAVIS_PULL_REQUEST} --env GH_PAGES_NAME=${GH_PAGES_NAME} --env GH_PAGES_EMAIL=${GH_PAGES_EMAIL} --env GH_PAGES_TOKEN=${GH_PAGES_TOKEN} ga4gh/gh-openapi-docs:0.2.1
