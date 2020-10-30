@@ -2,5 +2,10 @@
   "apiSpecPath": "helloworld.yaml",
   "docsRoot": "docs",
   "defaultBranch": "master",
-  "branchPathBase": "preview"
+  "branchPathBase": "preview",
+  "enabledBranchPatterns": [
+    "^master$",
+    "^develop$",
+    "^release/.+"
+  ]
 }
