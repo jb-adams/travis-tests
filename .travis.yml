@@ -18,5 +18,7 @@ before_install:
 script:
   - ./oas-validator/validate.sh "$URL_TO_VALIDATE"
 after_success:
-  - echo -e "$TRAVIS_BRANCH $GH_PAGES_NAME $GH_PAGES_EMAIL $GH_PAGES_TOKEN"
+  - pwd
+  - ls
+  - git branch
   - docker image pull ga4gh/gh-openapi-docs:0.2.1 && docker run -v `pwd`:/usr/src/repo --env PR_BUILD=${TRAVIS_PULL_REQUEST} --env GH_PAGES_NAME=${GH_PAGES_NAME} --env GH_PAGES_EMAIL=${GH_PAGES_EMAIL} --env GH_PAGES_TOKEN=${GH_PAGES_TOKEN} ga4gh/gh-openapi-docs:0.2.1
